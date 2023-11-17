@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(4, 197, 428);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 50%;
+  height: 400px;
+  box-shadow: 10px 10px 15px 12px rgb(65, 105, 118);
+  border-radius: 10px;
+  padding: 50px;
+  margin-top: 50px;
+  background-color: antiquewhite;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.button {
+  padding: 50px;
+  background-color: brown;
+  border-radius: 30px;
+  color: aliceblue;
+  border: 2px solid black;
+  opacity: 0.8;
+}
+
+.button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.screen,
+.result,
+.score {
+  align-self: center;
+  padding: 10px;
+  font-size: large;
+}
+
+.content {
+  display: block;
+}
+
+.result {
+  text-align: center;
+  font-size: x-large;
+  color: pink;
+  background-color: black;
+}
+
+.modal {
+  width: 100%;
+  height: 400px;
+  background-color: rgb(248, 179, 179);
+  display: none;
+  padding: 50px;
+}
+
+.play_again {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(4, 197, 428);
+  padding: 10px;
+  margin-top: 200px;
+  margin-left: 150px;
+  opacity: 0.6;
+}
+
+.play_again:hover {
+  opacity: 1;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.display {
+  font-size: xx-large;
+  font-weight: 400;
+  text-align: center;
+}

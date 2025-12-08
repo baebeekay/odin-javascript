@@ -1,95 +1,129 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 body {
-  background-color: rgb(4, 197, 428);
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f2f5;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
-  width: 50%;
-  height: 400px;
-  box-shadow: 10px 10px 15px 12px rgb(65, 105, 118);
-  border-radius: 10px;
-  padding: 50px;
-  margin-top: 50px;
-  background-color: antiquewhite;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.display {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.play_again {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.play_again:hover {
+  background-color: #0056b3;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.screen {
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.screen p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.result {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.score {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.score p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.winner {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #28a745;
 }
 
 .game {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .button {
-  padding: 50px;
-  background-color: brown;
-  border-radius: 30px;
-  color: aliceblue;
-  border: 2px solid black;
-  opacity: 0.8;
+  flex: 1;
+  padding: 15px 10px;
+  background-color: #6c757d;
+  color: #ffffff;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .button:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.screen,
-.result,
-.score {
-  align-self: center;
-  padding: 10px;
-  font-size: large;
-}
-
-.content {
-  display: block;
-}
-
-.result {
-  text-align: center;
-  font-size: x-large;
-  color: pink;
-  background-color: black;
-}
-
-.modal {
-  width: 100%;
-  height: 400px;
-  background-color: rgb(248, 179, 179);
-  display: none;
-  padding: 50px;
-}
-
-.play_again {
-  width: 100px;
-  height: 50px;
-  border-radius: 5px;
-  text-align: center;
-  background-color: rgb(4, 197, 428);
-  padding: 10px;
-  margin-top: 200px;
-  margin-left: 150px;
-  opacity: 0.6;
-}
-
-.play_again:hover {
-  opacity: 1;
-  cursor: pointer;
-  transition: 0.8s;
-}
-
-.display {
-  font-size: xx-large;
-  font-weight: 400;
-  text-align: center;
+  background-color: #5a6268;
 }

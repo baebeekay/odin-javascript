@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reusable Dropdown Menu Module</title>
+    <!-- Load Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to ensure the menu positions correctly */
+        .dropdown-container {
+            position: relative;
+            display: inline-block; /* Allows containers to sit side-by-side */
+        }
+        .dropdown-menu {
+            position: absolute;
+            z-index: 10;
+            top: 100%; /* Position right below the button */
+            left: 0;
+            min-width: 12rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s;
+        }
+        .dropdown-menu.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center p-8 font-sans">
+
+    <h1 class="text-3xl font-extrabold text-gray-800 mb-2">Universal Dropdown Component</h1>
+    <p class="text-gray-500 mb-10">Supports multiple click or hover triggers using reusable JavaScript.</p>
+
+    <div class="flex flex-wrap justify-center space-x-4 md:space-x-8">
+
+        <!-- Dropdown 1: Click Trigger (Default) -->
+        <div class="dropdown-container mb-6">
+            <button
+                id="menuButton1"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
+                aria-expanded="false"
+                aria-controls="dropdownMenu1"
+                data-dropdown-target="dropdownMenu1"
+                data-trigger-type="click"
+            >
+                Settings (Click)
+                <svg class="w-4 h-4 inline-block ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            
+            <!-- Menu Content 1 -->
+            <div id="dropdownMenu1" class="dropdown-menu bg-white border border-gray-200 rounded-lg shadow-xl p-1">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition duration-100">Profile</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition duration-100">Dashboard</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition duration-100">Billing</a>
+                <div class="border-t border-gray-100 my-1"></div>
+                <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition duration-100">Sign Out</a>
+            </div>
+        </div>
+
+        <!-- Dropdown 2: Hover Trigger -->
+        <div class="dropdown-container mb-6">
+            <button
+                id="menuButton2"
+                class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50"
+                aria-expanded="false"
+                aria-controls="dropdownMenu2"
+                data-dropdown-target="dropdownMenu2"
+                data-trigger-type="hover"
+            >
+                Links (Hover)
+                <svg class="w-4 h-4 inline-block ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            
+            <!-- Menu Content 2 -->
+            <div id="dropdownMenu2" class="dropdown-menu bg-white border border-gray-200 rounded-lg shadow-xl p-1">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition duration-100">API Documentation</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition duration-100">Community Forum</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition duration-100">Help Center</a>
+            </div>
+        </div>
+        
+        <!-- Dropdown 3: Click Trigger -->
+        <div class="dropdown-container mb-6">
+            <button
+                id="menuButton3"
+                class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50"
+                aria-expanded="false"
+                aria-controls="dropdownMenu3"
+                data-dropdown-target="dropdownMenu3"
+                data-trigger-type="click"
+            >
+                Actions (Click)
+                <svg class="w-4 h-4 inline-block ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            
+            <!-- Menu Content 3 -->
+            <div id="dropdownMenu3" class="dropdown-menu bg-white border border-gray-200 rounded-lg shadow-xl p-1">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition duration-100">Create New</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition duration-100">Export Report</a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="mt-8 text-sm text-gray-500 max-w-lg text-center">
+        The JavaScript below detects the <code>data-dropdown-target</code> and <code>data-trigger-type</code> attributes on each button to initialize the correct behavior (click or hover), demonstrating its reusability across all elements.
+    </p>
+
+
+    <script>
+        /**
+         * initializeDropdowns: A reusable pure JavaScript module entry point.
+         * This function handles setup for all dropdown elements on the page.
+         * For NPM packaging, this is the function you would export (as shown in the previous response).
+         */
+        function initializeDropdowns() {
+            // Find all buttons that are intended to be dropdown triggers
+            const triggers = document.querySelectorAll('[data-dropdown-target]');
+
+            /**
+             * Toggles the visibility of a given menu element.
+             */
+            const toggleMenu = (menu, trigger, force) => {
+                // If force is not provided, toggle the current state. Otherwise, force the state.
+                const isVisible = menu.classList.contains('visible');
+                const newState = force !== undefined ? force : !isVisible;
+
+                // Apply the 'visible' class to show/hide the menu
+                menu.classList.toggle('visible', newState);
+                // Update ARIA attribute for accessibility
+                trigger.setAttribute('aria-expanded', newState);
+            };
+
+            /**
+             * Handles the document-wide click event to close open 'click' triggered dropdowns.
+             */
+            const handleOutsideClick = (event) => {
+                // Close all currently visible click-triggered menus if the click was outside their container
+                triggers.forEach(trigger => {
+                    const menuId = trigger.dataset.dropdownTarget;
+                    const menu = document.getElementById(menuId);
+                    
+                    if (trigger.dataset.triggerType === 'click' && menu && menu.classList.contains('visible')) {
+                        const container = trigger.closest('.dropdown-container');
+                        
+                        // Check if the click target is outside the container
+                        if (container && !container.contains(event.target)) {
+                            toggleMenu(menu, trigger, false); // force close
+                        }
+                    }
+                });
+            };
+
+            // Setup listeners for each individual dropdown
+            triggers.forEach(trigger => {
+                const menuId = trigger.dataset.dropdownTarget;
+                const menu = document.getElementById(menuId);
+                const triggerType = trigger.dataset.triggerType || 'click'; // Default to click
+                const container = trigger.closest('.dropdown-container');
+
+                if (!menu) {
+                    console.error(`Dropdown target menu not found for ID: ${menuId}`);
+                    return;
+                }
+
+                if (triggerType === 'click') {
+                    // --- Click Behavior ---
+                    trigger.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevents immediate closure by handleOutsideClick
+                        toggleMenu(menu, trigger);
+                    });
+                    
+                    // Add keyboard accessibility
+                    trigger.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            toggleMenu(menu, trigger);
+                        }
+                        if (e.key === 'Escape' && menu.classList.contains('visible')) {
+                            e.preventDefault();
+                            toggleMenu(menu, trigger, false);
+                            trigger.focus(); // Return focus to the button
+                        }
+                    });
+
+                } else if (triggerType === 'hover' && container) {
+                    // --- Hover Behavior ---
+                    let timeout;
+
+                    // Open on mouse enter of the whole container
+                    container.addEventListener('mouseenter', () => {
+                        clearTimeout(timeout);
+                        toggleMenu(menu, trigger, true); // force open
+                    });
+
+                    // Close on mouse leave of the whole container
+                    container.addEventListener('mouseleave', () => {
+                        timeout = setTimeout(() => {
+                            toggleMenu(menu, trigger, false); // force close
+                        }, 150);
+                    });
+
+                    // Add click fallback for mobile/accessibility
+                    trigger.addEventListener('click', () => {
+                        toggleMenu(menu, trigger);
+                    });
+                }
+            });
+
+            // Add the global listener for closing click-triggered menus
+            document.addEventListener('click', handleOutsideClick);
+        }
+
+        // Initialize the module when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', initializeDropdowns);
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "simple-js-dropdown",
+  "version": "1.0.0",
+  "description": "Reusable dropdown component bundled with Webpack",
+  "main": "dist/bundle.js",
+  "type": "module",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "webpack": "^5.103.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

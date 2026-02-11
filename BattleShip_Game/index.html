@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Game</title>
+ <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Battleship Game</h1>
+    <h2 id="game-status">Loading...</h2>
+
+    <div id="placement-controls" style="display: none;">
+        <label>Current Ship: **<span id="ship-name-display"></span>**</label><br> 
+        <label>Orientation: **<span id="orientation-display">HORIZONTAL</span>**</label>
+        <button id="toggle-orientation">Rotate Ship</button>
+        <p style="font-size: 12px; margin: 5px 0;">Click on **Your Board** to place the ship.</p>
+    </div>
+
+    <div id="game-container">
+        <div>
+            <h3>Your Board (Defense)</h3>
+            <div id="player-one-board" class="gameboard-grid"></div> 
+        </div>
+        <div>
+            <h3>Enemy Board (Attack)</h3>
+            <div id="player-two-board" class="gameboard-grid"></div>
+        </div>
+    </div>
+
+    <script type="module" src="game-manager.js"></script>
+</body>
+</html>

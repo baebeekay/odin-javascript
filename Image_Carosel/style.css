@@ -1,0 +1,70 @@
+body {
+  background: #222;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  font-family: sans-serif;
+}
+
+.carousel-container {
+  width: 800px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  width: 9999px;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  width: 800px;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.left {
+  left: 10px;
+}
+.right {
+  right: 10px;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #aaa;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #fff;
+}

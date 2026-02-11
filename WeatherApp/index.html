@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1><span class="header-icon">☀️</span> The Modern Forecast</h1>
+        <p>A simple weather app powered by Visual Crossing</p>
+    </header>
+
+    <main class="container">
+        <form id="location-form">
+            <input type="text" id="location-input" placeholder="Enter city name, e.g., London" required>
+            <button type="submit">Get Weather</button>
+        </form>
+
+        <div id="loading" class="hidden">
+            <div class="loader"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <div id="weather-display" class="hidden">
+            <div class="header-info">
+                <h2 id="city-name"></h2>
+                <button id="toggle-units">Toggle to °C</button>
+            </div>
+
+            <div class="weather-card">
+                <p id="weather-description"></p>
+                <h3 id="temperature"></h3>
+            </div>
+
+            <div class="details">
+                <p>Feels Like: <span id="feels-like"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>Wind Speed: <span id="wind-speed"></span></p>
+            </div>
+        </div>
+
+        <div id="message" class="initial-message">
+            <p>Enter a location above to see the current forecast.</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

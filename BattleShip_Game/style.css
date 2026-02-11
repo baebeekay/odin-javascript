@@ -1,0 +1,127 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: #f4f7f9;
+  color: #333;
+  margin: 0;
+  padding-top: 20px;
+}
+h1 {
+  color: #007bff;
+  margin-bottom: 5px;
+}
+h2#game-status {
+  min-height: 40px;
+  font-size: 1.2em;
+  padding: 10px;
+  margin: 15px auto;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+}
+#game-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+h3 {
+  color: #555;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.gameboard-grid {
+  display: grid;
+  width: 350px;
+  height: 350px;
+  border: 5px solid #007bff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.cell {
+  border: 1px solid #cceeff;
+  background-color: #63a4ff;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+#player-two-board .cell:hover {
+  background-color: #4da6ff;
+  transform: scale(1.02);
+}
+
+#placement-controls {
+  background-color: #e9ecef;
+  padding: 15px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  width: 450px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#toggle-orientation {
+  background-color: #28a745; /* Green button */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+#toggle-orientation:hover {
+  background-color: #218838;
+}
+
+#player-one-board .ship-cell {
+  background-color: #5a5a5a;
+}
+
+.miss {
+  background-color: #8899a6 !important;
+  position: relative;
+  pointer-events: none;
+}
+.miss::after {
+  content: "•";
+  color: #fff;
+  font-size: 2em;
+  line-height: 0;
+}
+
+.hit {
+  background-color: #dc3545 !important;
+  position: relative;
+  pointer-events: none;
+}
+.hit::after {
+  content: "🔥";
+  font-size: 1.2em;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sunk-ship {
+  background-color: #343a40 !important;
+  animation: pulse-sunk 1s infinite alternate;
+}
+.sunk-ship::after {
+  content: "💀";
+}
+
+@keyframes pulse-sunk {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}

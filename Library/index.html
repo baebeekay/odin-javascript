@@ -1,0 +1,41 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Library</h1>
+        </header>
+
+        <button class="add-book-btn">New Book</button>
+
+        <div class="books-grid">
+            <!-- Book cards will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Dialog for adding a new book -->
+    <dialog id="newBookDialog">
+        <form class="dialog-form" id="newBookForm">
+            <h3>Add a New Book</h3>
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="author" placeholder="Author" required>
+            <input type="number" id="pages" placeholder="Number of Pages" required min="1">
+            <div class="form-row">
+                <label for="read">Have you read it?</label>
+                <input type="checkbox" id="read">
+            </div>
+            <div class="form-actions">
+                <button type="button" class="close-btn">Cancel</button>
+                <button type="submit" class="submit-btn">Add Book</button>
+            </div>
+        </form>
+    </dialog>
+    <script src="script.js"></script>
+</html>

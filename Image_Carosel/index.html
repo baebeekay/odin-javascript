@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Image Carousel</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use the Inter font and enable JIT mode -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .carousel-container {
+        /* Sets the 'picture frame' boundary */
+        max-width: 900px;
+        height: 400px; /* Fixed height for consistency */
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 font-sans flex items-center justify-center min-h-screen p-4"
+  >
+    <div
+      class="w-full max-w-4xl mx-auto shadow-2xl rounded-2xl bg-white overflow-hidden"
+    >
+      <h1
+        class="text-3xl font-bold text-center p-6 text-indigo-700 bg-indigo-50"
+      >
+        Interactive Auto-Rotating Carousel
+      </h1>
+
+      <!-- CAROUSEL FRAME -->
+      <div
+        id="carouselContainer"
+        class="carousel-container relative mx-auto rounded-lg overflow-hidden"
+      >
+        <!-- SLIDES WRAPPER: This div moves horizontally -->
+        <div
+          id="slidesWrapper"
+          class="flex w-full h-full transition-transform duration-500 ease-in-out"
+        >
+          <!-- Slides will be inserted here by JavaScript -->
+        </div>
+
+        <!-- NAVIGATION ARROWS -->
+        <button
+          id="prevBtn"
+          class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-80 transition focus:outline-none focus:ring-4 focus:ring-indigo-500"
+        >
+          <!-- Left Arrow Icon (Inline SVG) -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
+        <button
+          id="nextBtn"
+          class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-80 transition focus:outline-none focus:ring-4 focus:ring-indigo-500"
+        >
+          <!-- Right Arrow Icon (Inline SVG) -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- NAVIGATION DOTS CONTAINER -->
+      <div
+        id="dotsContainer"
+        class="flex justify-center space-x-3 py-4 bg-white rounded-b-2xl"
+      >
+        <!-- Dots will be inserted here by JavaScript -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
